@@ -7,9 +7,24 @@ const heroTitle = ref(null)
 const heroSubtitle = ref(null)
 const heroButtons = ref(null)
 
+const typingText = ref('')
+const fullText = 'Yusuf Saputra'
+const typeSpeed = 150
+
 onMounted(() => {
   const tl = gsap.timeline()
   
+  // Typing animation
+  let i = 0
+  const timer = setInterval(() => {
+    if (i < fullText.length) {
+      typingText.value += fullText.charAt(i)
+      i++
+    } else {
+      clearInterval(timer)
+    }
+  }, typeSpeed)
+
   tl.from(heroTitle.value, {
     y: 100,
     opacity: 0,
@@ -55,11 +70,11 @@ onMounted(() => {
         <span class="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest uppercase text-primary border border-primary/30 rounded-full bg-primary/5">
           Tersedia untuk Proyek Baru
         </span>
-        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
-          Saya <span class="text-primary">Yusuf</span> <br />
-          <span class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Saputra
+        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight min-h-[1.2em]">
+          Saya <span class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            {{ typingText }}
           </span>
+          <span class="inline-block w-[4px] h-[0.8em] bg-primary ml-1 animate-pulse"></span>
         </h1>
       </div>
 
