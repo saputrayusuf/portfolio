@@ -161,6 +161,14 @@ const closeProject = () => {
   document.body.style.overflow = 'auto'
 }
 
+const resolveImg = (path) => {
+  if (!path) return ''
+  if (path.startsWith('http')) return path
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+  const cleanPath = path.startsWith('/') ? path : `/${path}`
+  return `${base}${cleanPath}`
+}
+
 import { onMounted } from 'vue'
 import gsap from 'gsap'
 
@@ -209,7 +217,7 @@ onMounted(() => {
           >
             <!-- Background Image -->
             <img 
-              :src="project.image" 
+              :src="resolveImg(project.image)" 
               :alt="project.title"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             >
@@ -277,7 +285,7 @@ onMounted(() => {
             <img 
               v-for="(img, idx) in selectedProject.gallery" 
               :key="idx"
-              :src="img" 
+              :src="resolveImg(img)" 
               :alt="selectedProject.title"
               class="w-full rounded-2xl shadow-lg border border-white/5"
             >
