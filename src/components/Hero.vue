@@ -10,20 +10,40 @@ const heroButtons = ref(null)
 const typingText = ref('')
 const fullText = 'Yusuf Saputra'
 const typeSpeed = 150
+const pauseEnd = 2000 // Pause before re-typing
+
+const startTyping = () => {
+  let isErasing = false
+  let i = 0
+  
+  const type = () => {
+    const currentText = fullText
+    
+    if (!isErasing && i <= currentText.length) {
+      typingText.value = currentText.substring(0, i)
+      i++
+      setTimeout(type, typeSpeed)
+    } else if (isErasing && i >= 0) {
+      typingText.value = currentText.substring(0, i)
+      i--
+      setTimeout(type, typeSpeed / 2)
+    } else if (i > currentText.length) {
+      isErasing = true
+      setTimeout(type, pauseEnd)
+    } else {
+      isErasing = false
+      i = 0
+      setTimeout(type, 500)
+    }
+  }
+  
+  type()
+}
 
 onMounted(() => {
   const tl = gsap.timeline()
   
-  // Typing animation
-  let i = 0
-  const timer = setInterval(() => {
-    if (i < fullText.length) {
-      typingText.value += fullText.charAt(i)
-      i++
-    } else {
-      clearInterval(timer)
-    }
-  }, typeSpeed)
+  startTyping()
 
   tl.from(heroTitle.value, {
     y: 100,
