@@ -102,7 +102,7 @@ onMounted(() => {
         ref="heroSubtitle"
         class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-light"
       >
-        Pengembang Web dan Mobile yang fokus pada solusi Fullstack menggunakan teknologi modern seperti CodeIgniter, Angular, dan Flutter.
+        Fullstack Developer yang fokus pada pengembangan ekosistem Enterprise, solusi Logistik cerdas, dan integrasi AI untuk menghadirkan sistem yang skalabel dan efisien.
       </p>
 
       <div 
