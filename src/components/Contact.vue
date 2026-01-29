@@ -48,7 +48,7 @@ onMounted(() => {
               </div>
               <div>
                 <p class="text-xs text-gray-500 uppercase font-bold tracking-widest">Email</p>
-                <p class="text-lg font-medium font-mono">email@gmail.com</p>
+                <p class="text-lg font-medium font-mono">saputrayusuf133@gmail.com</p>
               </div>
             </div>
             
@@ -62,7 +62,7 @@ onMounted(() => {
               </div>
             </div>
             
-            <div class="flex items-center gap-4">
+            <!-- <div class="flex items-center gap-4">
               <div class="p-3 glass rounded-lg text-accent border-white/5">
                 <Phone :size="24" />
               </div>
@@ -70,7 +70,7 @@ onMounted(() => {
                 <p class="text-xs text-gray-500 uppercase font-bold tracking-widest">Telepon</p>
                 <p class="text-lg font-medium">+62 123 4567 890</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
