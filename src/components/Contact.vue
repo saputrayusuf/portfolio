@@ -58,7 +58,7 @@ onMounted(() => {
               </div>
               <div>
                 <p class="text-xs text-gray-500 uppercase font-bold tracking-widest">Lokasi</p>
-                <p class="text-lg font-medium">Indonesia</p>
+                <p class="text-sm sm:text-lg font-medium">Indonesia</p>
               </div>
             </div>
             
