@@ -105,6 +105,7 @@ onMounted(() => {
         Fullstack Developer yang fokus pada pengembangan ekosistem Enterprise, solusi Logistik cerdas, dan implementasi Computer Vision untuk menghadirkan sistem yang skalabel dan efisien.
       </p>
 
+      
       <div 
         ref="heroButtons"
         class="flex flex-col sm:flex-row items-center justify-center gap-4"
