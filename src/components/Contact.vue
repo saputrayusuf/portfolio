@@ -48,7 +48,7 @@ onMounted(() => {
               </div>
               <div>
                 <p class="text-xs text-gray-500 uppercase font-bold tracking-widest">Email</p>
-                <p class="text-lg font-medium font-mono">saputrayusuf133@gmail.com</p>
+                <p class="text-sm sm:text-lg font-medium font-mono break-all">saputrayusuf133@gmail.com</p>
               </div>
             </div>
             
